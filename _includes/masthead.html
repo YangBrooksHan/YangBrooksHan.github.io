@@ -1,8 +1,8 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        <button type="button" aria-label="Toggle menu">
           <div class="navicon"></div>
         </button>
 
@@ -10,13 +10,13 @@
           <!-- Language switch -->
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
             {% if page.url contains '/en/' %}
-              <a href="{{ '/' | relative_url }}" target="_self" class="lang-link">
-                <img class="svg" src="{{ '/images/cn.svg' | relative_url }}" width="20pt" alt="中文">
+              <a href="{{ '/' | relative_url }}" class="lang-link">
+                <img class="svg" src="{{ '/images/cn.svg' | relative_url }}" width="20" alt="中文">
                 中文
               </a>
             {% else %}
-              <a href="{{ '/en/' | relative_url }}" target="_self" class="lang-link">
-                <img class="svg" src="{{ '/images/en.svg' | relative_url }}" width="20pt" alt="English">
+              <a href="{{ '/en/' | relative_url }}" class="lang-link">
+                <img class="svg" src="{{ '/images/en.svg' | relative_url }}" width="20" alt="English">
                 English
               </a>
             {% endif %}
@@ -35,7 +35,7 @@
           {% endfor %}
         </ul>
 
-        <!-- Keep for theme compatibility if something references it, but do not rely on it -->
+        <!-- IMPORTANT: greedy-nav needs this -->
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>

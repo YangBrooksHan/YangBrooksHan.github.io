@@ -1,29 +1,25 @@
-(function () {
-  function getOffset() { return 20; }
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("site-nav");
+  if (!nav) return;
 
-  document.addEventListener("click", function (e) {
-    var a = e.target.closest('a[href^="#"]');
+  nav.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
     if (!a) return;
 
-    var href = a.getAttribute("href");
-    if (!href || href === "#") return;
+    const id = a.getAttribute("href");
+    if (!id || id === "#") return;
 
-    var id = href.slice(1);
-    var target = document.getElementById(id);
-    if (!target) return;
+    const el = document.querySelector(id);
+    if (!el) return;
 
-    // Block any other handlers (including theme/jQuery smoothScroll)
     e.preventDefault();
-    e.stopPropagation();
-    if (typeof e.stopImmediatePropagation === "function") e.stopImmediatePropagation();
 
-    var rect = target.getBoundingClientRect();
-    var top = window.pageYOffset + rect.top - getOffset();
-    window.scrollTo({ top: top, behavior: "smooth" });
+    // smooth scroll
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
 
-    // Ensure URL has no hash
+    // remove hash from URL
     if (history.replaceState) {
       history.replaceState(null, "", window.location.pathname + window.location.search);
     }
-  }, true); // IMPORTANT: capture phase
-})();
+  });
+});

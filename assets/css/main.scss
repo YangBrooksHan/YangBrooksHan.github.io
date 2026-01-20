@@ -252,11 +252,3 @@ html.no-js #site-nav .visible-links {
   display: flex !important;
 }
 
-@media (max-width: 768px) {
-  html.js #site-nav .visible-links {
-    display: none !important;
-  }
-  html.js #site-nav.is-open .visible-links {
-    display: flex !important;
-  }
-}
