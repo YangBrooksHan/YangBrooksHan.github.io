@@ -30,7 +30,7 @@ redirect_from:
 
 # 🎓 学历
 - *2019.06 - 2022.12*, <a href="https://www.pku.edu.cn/"><img class="png" src="/images/pku_logo.png" width="23pt"></a> 北京大学 数学科学学院, 北京海淀, 硕士 
-- *2015.09 - 2019.06*, <a href="https://www.jlu.edu.cn/"><img class="svg" src="/images/jlu_logo.svg" width="26pt"></a> 吉林大学 数学学院, 吉林长春，学士
+- *2015.09 - 2019.06*, <a href="https://www.jlu.edu.cn/"><img class="png" src="/images/jlu_logo.png" width="23pt"></a> 吉林大学 数学学院, 吉林长春，学士
  
 <span class='anchor' id='-lwzl'></span>
 
