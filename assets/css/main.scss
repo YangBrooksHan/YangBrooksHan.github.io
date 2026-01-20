@@ -107,3 +107,36 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+/* --- Mobile: force greedy-nav to collapse all menu items into the hamburger dropdown --- */
+
+/* Keep language switch aligned like other nav items */
+.greedy-nav .lang-links {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Ensure the greedy-nav layout behaves consistently */
+.greedy-nav {
+  display: flex;
+  align-items: center;
+}
+
+.greedy-nav .visible-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Key: on small screens, make visible-links have ~0 available width,
+   so greedy-nav will move all items into .hidden-links (thus hamburger works). */
+@media (max-width: 768px) {
+  .greedy-nav .visible-links {
+    flex: 0 0 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap;
+  }
+}

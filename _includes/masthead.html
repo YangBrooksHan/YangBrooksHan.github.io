@@ -2,10 +2,12 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+        <button type="button" aria-label="Toggle menu">
+          <div class="navicon"></div>
+        </button>
 
-        <ul class="visible-links">
-          {%- comment -%} Language switch {%- endcomment -%}
+        <!-- Language switch (do NOT put this inside visible-links; keep it always visible) -->
+        <ul class="lang-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
             {% if page.url contains '/en/' %}
               <a href="{{ '/' | relative_url }}" target="_self" class="lang-link">
@@ -19,23 +21,24 @@
               </a>
             {% endif %}
           </li>
+        </ul>
 
-          {%- comment -%} Nav links (choose by language) {%- endcomment -%}
+        <!-- Nav links (greedy-nav manages these) -->
+        <ul class="visible-links">
           {% assign nav = site.data.navigation.main %}
           {% if page.url contains '/en/' %}
             {% assign nav = site.data.navigation_en.main %}
           {% endif %}
 
           {% for link in nav %}
-            {% assign href = link.url | strip %}
+            {% assign href = link.url %}
             {% assign first_char = href | slice: 0, 1 %}
+            {% if first_char != '#' %}
+              {% assign href = href | relative_url %}
+            {% endif %}
 
             <li class="masthead__menu-item">
-              {% if first_char == '#' %}
-                <a href="{{ href }}" class="js-scroll" data-target="{{ href }}">{{ link.title }}</a>
-              {% else %}
-                <a href="{{ href | relative_url }}">{{ link.title }}</a>
-              {% endif %}
+              <a href="{{ href }}">{{ link.title }}</a>
             </li>
           {% endfor %}
         </ul>
