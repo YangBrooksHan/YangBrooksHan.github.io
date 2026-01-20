@@ -1,7 +1,7 @@
 zh:
   name: "韩洋"
   avatar: "/images/figure_id.jpg?v=2"
-  bio: "大模型"
+  bio: ""
   location: ""
   email: "yangbrooks.han@gmail.com"
   github: "YangBrooksHan"
@@ -12,7 +12,7 @@ zh:
 en:
   name: "Han Yang"
   avatar: "/images/figure_id.jpg?v=2"
-  bio: "Large Model Post-Training · AI Infrastructure"
+  bio: ""
   location: ""
   email: "yangbrooks.han@gmail.com"
   github: "YangBrooksHan"
