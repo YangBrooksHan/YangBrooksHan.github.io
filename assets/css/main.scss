@@ -247,13 +247,16 @@ h1:before,
    Defensive overrides (avoid "flash then disappear")
    - If theme JS injects inline styles on .visible-links, force ours.
    ========================================================= */
+/* Progressive enhancement */
+html.no-js #site-nav .visible-links {
+  display: flex !important;
+}
+
 @media (max-width: 768px) {
-  .site-nav .visible-links[style] {
-    /* If something adds style="", we still enforce our logic */
+  html.js #site-nav .visible-links {
     display: none !important;
   }
-
-  .site-nav.is-open .visible-links[style] {
+  html.js #site-nav.is-open .visible-links {
     display: flex !important;
   }
 }
