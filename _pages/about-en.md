@@ -111,4 +111,4 @@ hello<a href=''><img src=""></a>
 <span class='anchor' id='-gzjl'></span>
 
 # 💻 Experience
-- *2022.07 - 2026.01*, 中国电信股份有限公司北京研究院, 全职工程师
+- *2022.07 - 2026.01*, China Telecom Corporation Limited, Beijing Research Institute — Full-time Engineer
