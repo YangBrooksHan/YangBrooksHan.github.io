@@ -24,12 +24,11 @@ hello<a href=''><img src=""></a>
 - AI Infra
   
 
-
 <span class='anchor' id='-jybj'></span>
 
 # 🎓 Education
-- *2019.06 - 2022.12*, <a href="https://www.pku.edu.cn/"><img class="png" src="{{ '/images/pku_logo.png' | relative_url }}" width="23pt"></a> 北京大学 数学科学学院, 北京海淀, 硕士 
-- *2015.09 - 2019.06*, <a href="https://www.jlu.edu.cn/"><img class="png" src="{{ '/images/jlu_logo(6).png' | relative_url }}" width="23pt"></a> 吉林大学 数学学院, 吉林长春，学士
+- *2019.06 - 2022.12*, <a href="https://www.pku.edu.cn/"><img class="png" src="{{ '/images/pku_logo.png' | relative_url }}" width="23pt"></a> **Peking University**, School of Mathematical Sciences, Haidian District, Beijing — **M.S. (Master of Science)**
+- *2015.09 - 2019.06*, <a href="https://www.jlu.edu.cn/"><img class="png" src="{{ '/images/jlu_logo(6).png' | relative_url }}" width="23pt"></a> **Jilin University**, School of Mathematics, Changchun, Jilin — **B.S. (Bachelor’s Degree)**
  
 
 
