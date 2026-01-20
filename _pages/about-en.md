@@ -1,6 +1,6 @@
 ---
 permalink: /en/
-title: ""
+title: "Han Yang"
 excerpt: ""
 author_profile: true
 ---
