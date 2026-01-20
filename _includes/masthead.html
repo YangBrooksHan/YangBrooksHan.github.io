@@ -27,15 +27,18 @@
           {% endif %}
 
           {%- comment -%}
-            IMPORTANT:
-            - If link.url starts with "#", keep it as-is (pure anchor) so it won't be rewritten to a full path.
-            - Otherwise, apply relative_url for normal pages.
+            RULES:
+            1) If link.url begins with "#", keep it as-is (in-page anchor; no page navigation).
+            2) Otherwise, apply relative_url (normal path, including "/en/#xxx" if you keep it that way).
           {%- endcomment -%}
           {% for link in nav %}
             {% assign href = link.url %}
-            {% unless href startswith '#' %}
+            {% assign first_char = href | slice: 0, 1 %}
+
+            {% if first_char != '#' %}
               {% assign href = href | relative_url %}
-            {% endunless %}
+            {% endif %}
+
             <li class="masthead__menu-item">
               <a href="{{ href }}">{{ link.title }}</a>
             </li>
