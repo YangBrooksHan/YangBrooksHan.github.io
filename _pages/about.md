@@ -35,7 +35,6 @@ redirect_from:
 
 # 📝 论文专利
 
----
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Sensors 2022</div><img src='images/sensors2022.svg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -107,7 +106,7 @@ redirect_from:
 
 
 
-<span class='anchor' id='-gz'></span>
+<span class='anchor' id='-gzjl'></span>
 
-# 💻 工作
+# 💻 工作经历
 - *2022.07 - 2026.01*, 中国电信股份有限公司北京研究院, 全职工程师
