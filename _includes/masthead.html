@@ -3,6 +3,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
+
         <ul class="visible-links">
           {%- comment -%} Language switch {%- endcomment -%}
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
@@ -25,12 +26,22 @@
             {% assign nav = site.data.navigation_en.main %}
           {% endif %}
 
+          {%- comment -%}
+            IMPORTANT:
+            - If link.url starts with "#", keep it as-is (pure anchor) so it won't be rewritten to a full path.
+            - Otherwise, apply relative_url for normal pages.
+          {%- endcomment -%}
           {% for link in nav %}
+            {% assign href = link.url %}
+            {% unless href startswith '#' %}
+              {% assign href = href | relative_url %}
+            {% endunless %}
             <li class="masthead__menu-item">
-              <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+              <a href="{{ href }}">{{ link.title }}</a>
             </li>
           {% endfor %}
         </ul>
+
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
