@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "韩洋"
-description              : "电磁无损检测"
+description              : "大模型"
 repository               : "YangBrooksHan/YangBrooksHan.github.io"
 google_scholar_stats_use_cdn : false
 # https://github.com/YangBrooksHan/YangBrooksHan.github.io.git
@@ -21,10 +21,10 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "唐健"
+  name             : "韩洋"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "华中科技大学"
-  location         : "湖北 武汉"
+  bio              : ""
+  location         : ""
   employer         : #"Hefei General Machinery Research Institute"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=WMkMTb4AAAAJ"
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "tangjyan"
+  github           : "YangBrooksHan"
   google_plus      :
   keybase          :
   instagram        :
