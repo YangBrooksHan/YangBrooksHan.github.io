@@ -6,6 +6,7 @@ author_profile: true
 
 author:
     name: "Han Yang"
+    bio: "Large Model Post-Training, AI Infrastructure"
 ---
 
 {% if site.google_scholar_stats_use_cdn %}
