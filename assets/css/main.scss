@@ -252,3 +252,71 @@ html.no-js #site-nav .visible-links {
   display: flex !important;
 }
 
+
+
+
+
+
+/* ============================
+   Force hamburger on mobile for Minimal Mistakes greedy-nav
+   ============================ */
+
+@media (max-width: 768px) {
+  /* 1) Always show the toggle button on mobile */
+  .greedy-nav > button {
+    display: block !important;
+  }
+
+  /* 2) Force greedy-nav to move ALL items into hidden-links
+        by making visible-links effectively have no room */
+  .greedy-nav .visible-links {
+    max-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  /* 3) Style the dropdown (hidden-links) */
+  .greedy-nav .hidden-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+  }
+
+  /* 4) Minimal Mistakes uses .hidden to hide the dropdown */
+  .greedy-nav .hidden-links.hidden {
+    display: none !important;
+  }
+
+  .greedy-nav .hidden-links:not(.hidden) {
+    display: block !important;
+  }
+
+  .greedy-nav .hidden-links .masthead__menu-item a {
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Desktop behavior: no hamburger, normal menu */
+@media (min-width: 769px) {
+  .greedy-nav > button {
+    display: none !important;
+  }
+
+  .greedy-nav .visible-links {
+    max-width: none !important;
+    overflow: visible !important;
+    display: flex !important;
+  }
+
+  .greedy-nav .hidden-links {
+    display: none !important;
+  }
+}
