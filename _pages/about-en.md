@@ -1,12 +1,9 @@
 ---
 permalink: /en/
-title: "Han Yang"
+title: ""
 excerpt: ""
 author_profile: true
-
-author:
-    name: "Han Yang"
-    bio: "Large Model Post-Training, AI Infrastructure"
+author: en
 ---
 
 {% if site.google_scholar_stats_use_cdn %}
