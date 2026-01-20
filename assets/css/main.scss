@@ -1,16 +1,10 @@
 ---
 ---
-
 /*
  *    Minimal Mistakes Jekyll Theme
- *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
- *
 */
 
-@import "vendor/breakpoint/breakpoint"; // media query mixins
+@import "vendor/breakpoint/breakpoint";
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
@@ -54,7 +48,6 @@
     display: flex;
     width: 100%;
     order: 2;
-
     img {
       max-width: 400px;
       box-shadow: 3px 3px 6px #888;
@@ -107,50 +100,42 @@ h1:before,
 }
 
 /* =========================================================
-   Responsive nav (Desktop hides hamburger; Mobile shows it)
-   Works with your own JS toggling .is-open on #site-nav or .greedy-nav
+   NAV FIX (Desktop: show links; Mobile: hamburger dropdown)
+   - Works whether you use theme greedy-nav OR your is-open toggle
    ========================================================= */
 
-/* Desktop / tablet: show horizontal links, hide hamburger */
+/* Always make desktop nav visible */
+.greedy-nav .visible-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Hide hamburger on desktop */
 @media (min-width: 769px) {
-  /* hide hamburger button */
-  #site-nav > button.nav-toggle,
-  #site-nav > button,
-  .greedy-nav > button.nav-toggle,
   .greedy-nav > button {
     display: none !important;
   }
 
-  /* keep visible links in normal flow */
-  #site-nav .visible-links,
   .greedy-nav .visible-links {
     display: flex !important;
     position: static !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
     box-shadow: none !important;
     background: transparent !important;
   }
 }
 
-/* Mobile: show hamburger, collapse/expand the menu */
+/* Mobile: show hamburger, dropdown menu */
 @media (max-width: 768px) {
-  #site-nav,
   .greedy-nav {
     position: relative;
   }
 
-  /* show hamburger button */
-  #site-nav > button.nav-toggle,
-  #site-nav > button,
-  .greedy-nav > button.nav-toggle,
   .greedy-nav > button {
     display: block !important;
   }
 
-  /* hide menu by default */
-  #site-nav .visible-links,
+  /* Default: hide visible-links */
   .greedy-nav .visible-links {
     display: none !important;
     position: absolute;
@@ -165,21 +150,21 @@ h1:before,
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
   }
 
-  /* show when open (support either #site-nav.is-open or .greedy-nav.is-open) */
-  #site-nav.is-open .visible-links,
-  .greedy-nav.is-open .visible-links {
+  /* Show when either:
+     1) you toggle .is-open (your方案)
+     2) theme greedy-nav JS removes `.hidden` etc ——我们也兼容 `.is--active`（部分版本会用）
+  */
+  .greedy-nav.is-open .visible-links,
+  .greedy-nav.is--active .visible-links {
     display: block !important;
   }
 
-  /* mobile menu item layout */
-  #site-nav .visible-links .masthead__menu-item,
   .greedy-nav .visible-links .masthead__menu-item {
     display: block;
     margin: 0;
     padding: 0;
   }
 
-  #site-nav .visible-links .masthead__menu-item a,
   .greedy-nav .visible-links .masthead__menu-item a {
     display: block;
     padding: 0.75rem 1rem;
