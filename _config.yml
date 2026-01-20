@@ -8,9 +8,9 @@
 # Site Settings
 title                    : "唐健"
 description              : "电磁无损检测"
-repository               : "tangjyan/tangjyan.github.io"
+repository               : "YangBrooksHan/YangBrooksHan.github.io"
 google_scholar_stats_use_cdn : false
-
+# https://github.com/YangBrooksHan/YangBrooksHan.github.io.git
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
