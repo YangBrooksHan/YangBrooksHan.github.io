@@ -5,13 +5,23 @@
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
-            <a href="https://yangbrookshan.github.io/" target="_self" class="lang-link">
-              <img class="svg" src="/images/en.svg?v=2" width="20pt" alt="English"> 
+            <a href="{{ '/en/' | relative_url }}" target="_self" class="lang-link">
+              <img class="svg" src="{{ '/images/en.svg' | relative_url }}" width="20pt" alt="English"> 
               English
             </a>
           </li>
           {% for link in site.data.navigation.main %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+          {% assign nav = site.data.navigation.main %}
+          {% if page.url contains '/en/' %}
+            {% assign nav = site.data.navigation_en.main %}
+          {% endif %}
+          
+          {% for link in nav %}
+            <li class="masthead__menu-item">
+              <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+            </li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
