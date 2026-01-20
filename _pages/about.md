@@ -140,14 +140,8 @@ redirect_from:
 - 刁燕, 陈敏, 王荣彪, `唐健`, 蒲廷燕, 都健. 一种基于绳体拉力传动的机械手. [[网页]](https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=SCPD&dbname=SCPD2016&filename=CN105773598A&v=) 
 
 
-<span class='anchor' id='-ryjx'></span>
 
-
-
-# 🏛️ 学术会议
-
-
-<span class='anchor' id='-gzsx'></span>
+<span class='anchor' id='-gz'></span>
 
 # 💻 工作
 - *2022.07 - 2026.01*, 中国电信股份有限公司北京研究院, 全职工程师
