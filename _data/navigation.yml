@@ -3,8 +3,8 @@ main:
   - title: "简介"
     url: "/#about-me"
 
-  - title: "学历"
-    url: "/#-xl"
+  - title: "教育背景"
+    url: "/#-jybj"
 
   - title: "论文专利"
     url: "/#-lwzl"
