@@ -1,13 +1,13 @@
 # main links links
 main:
   - title: "About Me"
-    url: "/en/#about-me"
+    url: "#about-me"
 
   - title: "Education"
-    url: "/en/#-jybj"
+    url: "#-jybj"
 
   - title: "Publications"
-    url: "/en/#-lwzl"
+    url: "#-lwzl"
 
   - title: "Experience"
-    url: "/en/#-gzjl"
+    url: "#-gzjl"

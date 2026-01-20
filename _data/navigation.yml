@@ -1,13 +1,13 @@
 # main links links
 main:
   - title: "简介"
-    url: "/#about-me"
+    url: "#about-me"
 
   - title: "教育背景"
-    url: "/#-jybj"
+    url: "#-jybj"
 
   - title: "论文专利"
-    url: "/#-lwzl"
+    url: "#-lwzl"
 
   - title: "工作经历"
-    url: "/#-gzjl"
+    url: "#-gzjl"
