@@ -6,6 +6,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+  /* Prevent FOUC: hide mobile menu before main.css is loaded */
+  @media (max-width: 768px){
+    html.js #site-nav .visible-links{ display:none; }
+  }
+</style>
+
+
 <script>
   document.documentElement.className =
     document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
