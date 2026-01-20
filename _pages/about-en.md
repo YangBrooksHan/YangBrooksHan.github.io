@@ -3,6 +3,9 @@ permalink: /en/
 title: "Han Yang"
 excerpt: ""
 author_profile: true
+
+author:
+    name: "Han Yang"
 ---
 
 {% if site.google_scholar_stats_use_cdn %}
