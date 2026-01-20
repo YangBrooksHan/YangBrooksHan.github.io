@@ -29,8 +29,8 @@ redirect_from:
 <span class='anchor' id='-xl'></span>
 
 # 🎓 学历
-- *2019.06 - 2022.12*, <a href="https://www.hust.edu.cn/"><img class="svg" src="/images/HUST_logo.svg" width="23pt"></a> 北京大学 数学科学学院, 北京, 硕士 
-- *2015.09 - 2019.06*, <a href="https://www.scu.edu.cn/"><img class="svg" src="/images/SCU_logo.svg" width="20pt"></a> 吉林大学 数学学院, 吉林长春
+- *2019.06 - 2022.12*, <a href="https://www.hust.edu.cn/"><img class="svg" src="/images/HUST_logo.svg" width="23pt"></a> 北京大学 数学科学学院, 北京海淀, 硕士 
+- *2015.09 - 2019.06*, <a href="https://www.scu.edu.cn/"><img class="svg" src="/images/SCU_logo.svg" width="20pt"></a> 吉林大学 数学学院, 吉林长春，学士
  
 <span class='anchor' id='-lwzl'></span>
 
