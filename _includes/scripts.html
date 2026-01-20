@@ -1,4 +1,8 @@
-<script src="assets/js/main.min.js"></script>
+<script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+
+<!-- Your custom behavior scripts (load AFTER theme scripts so you can override) -->
+<script src="{{ '/assets/js/nav-toggle.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/nohash-scroll.js' | relative_url }}"></script>
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}

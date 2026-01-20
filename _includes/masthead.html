@@ -1,7 +1,7 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
           <div class="navicon"></div>
         </button>
@@ -29,19 +29,13 @@
           {% endif %}
 
           {% for link in nav %}
-            {% assign href = link.url %}
-            {% assign first_char = href | slice: 0, 1 %}
-            {% if first_char != '#' %}
-              {% assign href = href | relative_url %}
-            {% endif %}
-
             <li class="masthead__menu-item">
-              <a href="{{ href }}">{{ link.title }}</a>
+              <a href="{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
         </ul>
 
-        <!-- keep for theme compatibility; we won't depend on it -->
+        <!-- Keep for theme compatibility if something references it, but do not rely on it -->
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
