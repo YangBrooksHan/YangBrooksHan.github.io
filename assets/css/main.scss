@@ -108,35 +108,40 @@ h1:before, .anchor:before {
     font-size: .8em;
 }
 
-/* --- Mobile: force greedy-nav to collapse all menu items into the hamburger dropdown --- */
-
-/* Keep language switch aligned like other nav items */
-.greedy-nav .lang-links {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Ensure the greedy-nav layout behaves consistently */
-.greedy-nav {
-  display: flex;
-  align-items: center;
-}
-
-.greedy-nav .visible-links {
-  display: flex;
-  align-items: center;
-}
-
-/* Key: on small screens, make visible-links have ~0 available width,
-   so greedy-nav will move all items into .hidden-links (thus hamburger works). */
+/* Mobile dropdown menu (independent of greedy-nav JS) */
 @media (max-width: 768px) {
+  .greedy-nav {
+    position: relative;
+  }
+
+  /* Hide menu by default on mobile */
   .greedy-nav .visible-links {
-    flex: 0 0 0 !important;
-    max-width: 0 !important;
-    overflow: hidden !important;
-    white-space: nowrap;
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+  }
+
+  /* Show when open */
+  .greedy-nav.is-open .visible-links {
+    display: block !important;
+  }
+
+  .greedy-nav .visible-links .masthead__menu-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .greedy-nav .visible-links .masthead__menu-item a {
+    display: block;
+    padding: 0.75rem 1rem;
   }
 }

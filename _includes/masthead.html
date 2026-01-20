@@ -1,13 +1,13 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button type="button" aria-label="Toggle menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
           <div class="navicon"></div>
         </button>
 
-        <!-- Language switch (do NOT put this inside visible-links; keep it always visible) -->
-        <ul class="lang-links">
+        <ul class="visible-links">
+          <!-- Language switch -->
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
             {% if page.url contains '/en/' %}
               <a href="{{ '/' | relative_url }}" target="_self" class="lang-link">
@@ -21,10 +21,8 @@
               </a>
             {% endif %}
           </li>
-        </ul>
 
-        <!-- Nav links (greedy-nav manages these) -->
-        <ul class="visible-links">
+          <!-- Nav links (choose by language) -->
           {% assign nav = site.data.navigation.main %}
           {% if page.url contains '/en/' %}
             {% assign nav = site.data.navigation_en.main %}
@@ -43,6 +41,7 @@
           {% endfor %}
         </ul>
 
+        <!-- keep for theme compatibility; we won't depend on it -->
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
