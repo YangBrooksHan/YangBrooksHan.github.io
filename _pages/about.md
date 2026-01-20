@@ -18,14 +18,14 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 我硕士毕业于北京大学数学科学学院，我的导师是李铁军教授。本科毕业于吉林长春的吉林大学 数学学院。包括合著，我已经发表 20+ 篇学术论文
- <a href='https://scholar.google.com/citations?user=WMkMTb4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。
+ <a href=''><img src=""></a>。
 
 我的研究领域包括：
 - 大模型Post-Training
 
   
 
-s
+
 <span class='anchor' id='-xl'></span>
 
 # 🎓 学历

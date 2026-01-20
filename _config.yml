@@ -22,14 +22,14 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "韩洋"
-  avatar           : "images/android-chrome-512x512.png"
+  avatar           : "images/figure_id.jpg"
   bio              : ""
   location         : ""
   employer         : #"Hefei General Machinery Research Institute"
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=WMkMTb4AAAAJ"
+  googlescholar    : ""
   email            : "yangbrooks.han@gmail.com"
-  researchgate     : "https://www.researchgate.net/profile/Jian-Tang-53"
+  researchgate     : ""
   uri              : 
   bitbucket        :
   codepen          :
