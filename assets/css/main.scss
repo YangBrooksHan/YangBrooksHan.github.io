@@ -117,206 +117,51 @@ h1:before,
 }
 
 /* =========================================================
-   NAV: Desktop no-hamburger; Mobile hamburger + dropdown
-   IMPORTANT:
-   - This targets .site-nav (NOT .greedy-nav) to avoid theme JS
-   - JS toggles: #site-nav.is-open
+   NAV (Stable): Use Minimal Mistakes greedy-nav ONLY
+   - Do NOT override visible-links/hidden-links display logic.
+   - Only adjust the hamburger visibility & dropdown width on mobile.
    ========================================================= */
 
-/* Base nav container */
-.site-nav {
-  position: relative;
-}
-
-/* Reset list visuals */
-.site-nav .visible-links,
-.site-nav .hidden-links {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Desktop default: show links inline */
-.site-nav .visible-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-/* Hide the hidden-links always (we do NOT depend on greedy-nav) */
-.site-nav .hidden-links {
-  display: none !important;
-}
-
-/* Button base (hamburger) */
-.site-nav > button,
-.site-nav .nav-toggle {
-  background: transparent;
-  border: 0;
-  padding: 0.5rem;
-  margin: 0;
-  cursor: pointer;
-}
-
-/* Ensure the navicon is visible if theme styles differ */
-.site-nav .navicon {
-  width: 1.25rem;
-  height: 0.125rem;
-  background: currentColor;
-  position: relative;
-  display: inline-block;
-}
-.site-nav .navicon:before,
-.site-nav .navicon:after {
-  content: "";
-  width: 1.25rem;
-  height: 0.125rem;
-  background: currentColor;
-  position: absolute;
-  left: 0;
-}
-.site-nav .navicon:before { top: -0.35rem; }
-.site-nav .navicon:after  { top:  0.35rem; }
-
-/* ---------- Desktop (>=769px): no hamburger, inline menu ---------- */
+/* Desktop: hide hamburger button */
 @media (min-width: 769px) {
-  /* Hide hamburger */
-  .site-nav > button,
-  .site-nav .nav-toggle {
+  /* greedy-nav button is the hamburger */
+  .greedy-nav > button {
     display: none !important;
   }
-
-  /* Show links inline */
-  .site-nav .visible-links {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
 }
 
-/* ---------- Mobile (<=768px): show hamburger, dropdown menu ---------- */
+/* Mobile: show hamburger and make dropdown full width */
 @media (max-width: 768px) {
-  /* Show hamburger */
-  .site-nav > button,
-  .site-nav .nav-toggle {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
+  .greedy-nav {
+    position: relative;
   }
 
-  /* Collapse list by default */
-  .site-nav .visible-links {
-    display: none !important;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-    padding: 0.5rem 0;
-  }
-
-  /* Open state */
-  .site-nav.is-open .visible-links {
-    display: flex !important;
-  }
-
-  /* Make each item full-width tappable */
-  .site-nav .visible-links .masthead__menu-item {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .site-nav .visible-links .masthead__menu-item a {
-    display: block;
-    padding: 0.75rem 1rem;
-  }
-}
-
-/* =========================================================
-   Defensive overrides (avoid "flash then disappear")
-   - If theme JS injects inline styles on .visible-links, force ours.
-   ========================================================= */
-/* Progressive enhancement */
-html.no-js #site-nav .visible-links {
-  display: flex !important;
-}
-
-
-
-
-
-
-/* ============================
-   Force hamburger on mobile for Minimal Mistakes greedy-nav
-   ============================ */
-
-@media (max-width: 768px) {
-  /* 1) Always show the toggle button on mobile */
+  /* show hamburger button */
   .greedy-nav > button {
     display: block !important;
   }
 
-  /* 2) Force greedy-nav to move ALL items into hidden-links
-        by making visible-links effectively have no room */
-  .greedy-nav .visible-links {
-    max-width: 0 !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-  }
+  /*
+    Important:
+    - DO NOT set .visible-links { display:none } here.
+    - greedy-nav JS decides what is visible vs hidden.
+    - We only style the dropdown container.
+  */
 
-  /* 3) Style the dropdown (hidden-links) */
+  /* Make dropdown (hidden-links) full-width */
   .greedy-nav .hidden-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
     right: 0;
-    z-index: 1000;
-    margin: 0;
-    padding: 0.5rem 0;
-    list-style: none;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    left: 0;
   }
 
-  /* 4) Minimal Mistakes uses .hidden to hide the dropdown */
-  .greedy-nav .hidden-links.hidden {
-    display: none !important;
-  }
-
-  .greedy-nav .hidden-links:not(.hidden) {
-    display: block !important;
-  }
-
+  /* Improve tap area */
   .greedy-nav .hidden-links .masthead__menu-item a {
     display: block;
     padding: 0.75rem 1rem;
   }
 }
 
-/* Desktop behavior: no hamburger, normal menu */
-@media (min-width: 769px) {
-  .greedy-nav > button {
-    display: none !important;
-  }
-
-  .greedy-nav .visible-links {
-    max-width: none !important;
-    overflow: visible !important;
-    display: flex !important;
-  }
-
-  .greedy-nav .hidden-links {
-    display: none !important;
-  }
+/* No-JS fallback: if JS fails, show visible-links */
+html.no-js .greedy-nav .visible-links {
+  display: flex !important;
 }
