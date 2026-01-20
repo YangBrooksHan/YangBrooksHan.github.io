@@ -41,105 +41,145 @@
 @import "print";
 
 .paper-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px #efefef solid;
+  padding: 2em 0 2em 0;
+
+  .paper-box-image {
+    justify-content: center;
     display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-bottom: 1px #efefef solid;
-    padding: 2em 0 2em 0;
-    
+    width: 100%;
+    order: 2;
 
-    .paper-box-image{
-        justify-content: center;
-        display: flex;
-        width: 100%;
-        order: 2;
-        img {
-            max-width: 400px;
-            box-shadow: 3px 3px 6px #888;
-            object-fit: cover;
-        }
+    img {
+      max-width: 400px;
+      box-shadow: 3px 3px 6px #888;
+      object-fit: cover;
     }
-    
-    .paper-box-text{
-        max-width: 100%;
-        order: 1;
-    }
-    
-    @include breakpoint($medium) {
-        .paper-box-image{
-            justify-content: left;
-            min-width: 200px;
-            max-width: 40%;
-            order: 1;
-        }
-        
-        .paper-box-text{
-            justify-content: left;
-            padding-left: 2em;
-            max-width: 60%;
-            order: 2;
-        }
+  }
 
+  .paper-box-text {
+    max-width: 100%;
+    order: 1;
+  }
+
+  @include breakpoint($medium) {
+    .paper-box-image {
+      justify-content: left;
+      min-width: 200px;
+      max-width: 40%;
+      order: 1;
     }
 
-
+    .paper-box-text {
+      justify-content: left;
+      padding-left: 2em;
+      max-width: 60%;
+      order: 2;
+    }
+  }
 }
 
-$scroll_offset : 2em;
-h1:before, .anchor:before { 
-    content: ''; 
-    display: block; 
-    position: relative; 
-    width: 0; 
-    height: $scroll_offset; 
-    margin-top: -$scroll_offset;
+$scroll_offset: 2em;
+h1:before,
+.anchor:before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 0;
+  height: $scroll_offset;
+  margin-top: -$scroll_offset;
 }
 
 .badge {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: absolute;
-    margin-top: .5em;
-    margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
-    font-size: .8em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: absolute;
+  margin-top: 0.5em;
+  margin-left: -0.5em;
+  color: white;
+  background-color: #00369f;
+  font-size: 0.8em;
 }
 
-/* Mobile dropdown menu (independent of greedy-nav JS) */
+/* =========================================================
+   Responsive nav (Desktop hides hamburger; Mobile shows it)
+   Works with your own JS toggling .is-open on #site-nav or .greedy-nav
+   ========================================================= */
+
+/* Desktop / tablet: show horizontal links, hide hamburger */
+@media (min-width: 769px) {
+  /* hide hamburger button */
+  #site-nav > button.nav-toggle,
+  #site-nav > button,
+  .greedy-nav > button.nav-toggle,
+  .greedy-nav > button {
+    display: none !important;
+  }
+
+  /* keep visible links in normal flow */
+  #site-nav .visible-links,
+  .greedy-nav .visible-links {
+    display: flex !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
+/* Mobile: show hamburger, collapse/expand the menu */
 @media (max-width: 768px) {
+  #site-nav,
   .greedy-nav {
     position: relative;
   }
 
-  /* Hide menu by default on mobile */
+  /* show hamburger button */
+  #site-nav > button.nav-toggle,
+  #site-nav > button,
+  .greedy-nav > button.nav-toggle,
+  .greedy-nav > button {
+    display: block !important;
+  }
+
+  /* hide menu by default */
+  #site-nav .visible-links,
   .greedy-nav .visible-links {
     display: none !important;
     position: absolute;
     top: 100%;
-    right: 0;
     left: 0;
+    right: 0;
     z-index: 999;
     margin: 0;
     padding: 0.5rem 0;
     list-style: none;
     background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
   }
 
-  /* Show when open */
+  /* show when open (support either #site-nav.is-open or .greedy-nav.is-open) */
+  #site-nav.is-open .visible-links,
   .greedy-nav.is-open .visible-links {
     display: block !important;
   }
 
+  /* mobile menu item layout */
+  #site-nav .visible-links .masthead__menu-item,
   .greedy-nav .visible-links .masthead__menu-item {
     display: block;
     margin: 0;
     padding: 0;
   }
 
+  #site-nav .visible-links .masthead__menu-item a,
   .greedy-nav .visible-links .masthead__menu-item a {
     display: block;
     padding: 0.75rem 1rem;
