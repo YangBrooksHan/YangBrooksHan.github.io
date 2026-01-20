@@ -18,7 +18,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-# 🧠 个人简介
+# 🧠 个
 
 我
 <a href=''><img src=""></a>
@@ -31,7 +31,7 @@ redirect_from:
 
 <span class='anchor' id='-jybj'></span>
 
-# 🎓 教育背景
+# 🎓 教
 - *2019.06 - 2022.12*, <a href="https://www.pku.edu.cn/"><img class="png" src="/images/pku_logo.png" width="23pt"></a> 北京大学 数学科学学院, 北京海淀, 硕士 
 - *2015.09 - 2019.06*, <a href="https://www.jlu.edu.cn/"><img class="png" src="/images/jlu_logo(6).png" width="23pt"></a> 吉林大学 数学学院, 吉林长春，学士
  
@@ -41,7 +41,7 @@ redirect_from:
 
 <span class='anchor' id='-lwzl'></span>
 
-# 📝 论文专利
+# 📝 论
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Sensors 2022</div><img src='images/sensors2022.svg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -115,5 +115,5 @@ redirect_from:
 
 <span class='anchor' id='-gzjl'></span>
 
-# 💻 工作经历
+# 💻 工
 - *2022.07 - 2026.01*, 中国电信股份有限公司北京研究院, 全职工程师
