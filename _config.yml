@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "韩洋"
-  avatar           : "images/figure_id.jpg?v=2"
+  avatar           : "/images/figure_id.jpg?v=2"
   bio              : ""
   location         : ""
   employer         : #"Hefei General Machinery Research Institute"
