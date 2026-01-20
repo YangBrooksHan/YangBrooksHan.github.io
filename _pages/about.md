@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-我硕士毕业于北京大学数学科学学院，我的导师是李铁军教授。本科毕业于吉林长春的吉林大学 数学学院。<a href=''><img src=""></a>。
+我硕士毕业于北京大学数学科学学院，我的导师是李铁军教授。本科毕业于吉林长春的吉林大学 数学学院。<a href=''><img src=""></a>
 
 我的研究领域包括：
 - 大模型Post-Training
