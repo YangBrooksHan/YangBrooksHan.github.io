@@ -25,7 +25,7 @@ author:
   avatar           : "/images/figure_id.jpg?v=2"
   bio              : ""
   location         : ""
-  employer         : #"Hefei General Machinery Research Institute"
+  employer         : 
   pubmed           : 
   googlescholar    : ""
   email            : "yangbrooks.han@gmail.com"
@@ -56,7 +56,7 @@ author:
   weibo            :
   xing             :
   youtube          :
-  wikipedia        : #
+  wikipedia        : 
 
 
 # Reading Files
