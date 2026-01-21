@@ -6,15 +6,23 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Ensure no-js exists before we flip it to js -->
 <script>
+  document.documentElement.className = (document.documentElement.className || '')
+    .replace(/\bjs\b/g, '')
+    .trim();
+  if (!/\bno-js\b/.test(document.documentElement.className)) {
+    document.documentElement.className += ' no-js';
+  }
   document.documentElement.className =
-    document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    document.documentElement.className.replace(/\bno-js\b/g, 'js');
 </script>
+
+<meta http-equiv="cleartype" content="on">
+<meta name="color-scheme" content="light dark">
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-<meta http-equiv="cleartype" content="on">
 
 <!-- No-hash smooth scroll (for in-page nav without changing URL) -->
 <script src="{{ '/assets/js/nohash-scroll.js' | relative_url }}"></script>

@@ -2,11 +2,11 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
-
-        <!-- IMPORTANT: Minimal Mistakes greedy-nav expects this toggle class and navicon span -->
         <button type="button"
                 class="greedy-nav__toggle"
-                aria-label="Toggle menu">
+                aria-label="Toggle menu"
+                aria-expanded="false"
+                aria-controls="site-nav">
           <span class="navicon"></span>
         </button>
 
@@ -45,7 +45,6 @@
           {% endfor %}
         </ul>
 
-        <!-- IMPORTANT: greedy-nav needs this container -->
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>

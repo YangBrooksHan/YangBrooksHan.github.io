@@ -117,51 +117,85 @@ h1:before,
 }
 
 /* =========================================================
-   NAV (Stable): Use Minimal Mistakes greedy-nav ONLY
-   - Do NOT override visible-links/hidden-links display logic.
-   - Only adjust the hamburger visibility & dropdown width on mobile.
+   NAV (Stable): Minimal Mistakes greedy-nav
+   Principle:
+   - Never force .visible-links display on mobile (avoid flash/disappear).
+   - Let greedy-nav JS decide what goes to .hidden-links.
+   - We only: (1) hide/show hamburger by breakpoint, (2) style dropdown.
    ========================================================= */
 
-/* Desktop: hide hamburger button */
+/* Desktop: hide hamburger toggle */
 @media (min-width: 769px) {
-  /* greedy-nav button is the hamburger */
-  .greedy-nav > button {
+  .greedy-nav__toggle {
+    display: none !important;
+  }
+
+  /* Ensure dropdown container never shows on desktop */
+  .greedy-nav .hidden-links {
     display: none !important;
   }
 }
 
-/* Mobile: show hamburger and make dropdown full width */
+/* Mobile: show hamburger + make dropdown full width & touch-friendly */
 @media (max-width: 768px) {
   .greedy-nav {
-    position: relative;
+    position: relative; /* anchor dropdown */
   }
 
-  /* show hamburger button */
-  .greedy-nav > button {
-    display: block !important;
+  /* Show hamburger toggle (theme may hide it) */
+  .greedy-nav__toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
-  /*
-    Important:
-    - DO NOT set .visible-links { display:none } here.
-    - greedy-nav JS decides what is visible vs hidden.
-    - We only style the dropdown container.
-  */
-
-  /* Make dropdown (hidden-links) full-width */
+  /* Dropdown container (hidden-links) full width */
   .greedy-nav .hidden-links {
-    right: 0;
     left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 100%;
+
+    /* keep above content */
+    z-index: 9999;
+
+    /* Better mobile usability */
+    max-height: calc(100vh - 64px); /* avoid overflow under address bar */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Improve tap area */
+  /* Improve tap targets */
   .greedy-nav .hidden-links .masthead__menu-item a {
     display: block;
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1rem;
+  }
+
+  /* Optional: make language switch item align in dropdown nicely */
+  .greedy-nav .hidden-links .masthead__menu-home-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Prevent accidental horizontal scroll in dropdown */
+  .greedy-nav .hidden-links .masthead__menu-item {
+    white-space: normal;
   }
 }
 
-/* No-JS fallback: if JS fails, show visible-links */
+/* No-JS fallback:
+   - Show visible-links (full nav)
+   - Hide hidden-links to avoid duplicates
+*/
+html.no-js .greedy-nav__toggle {
+  display: none !important;
+}
+html.no-js .greedy-nav .hidden-links {
+  display: none !important;
+}
 html.no-js .greedy-nav .visible-links {
   display: flex !important;
+  flex-wrap: wrap; /* allow wrap on small screens when no JS */
 }
