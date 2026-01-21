@@ -1,13 +1,13 @@
 # main links links
 main:
-  - title: "个"
+  - title: "个人简介"
     url: "#about-me"
 
-  - title: "教"
+  - title: "教育背景"
     url: "#-jybj"
 
-  - title: "论"
+  - title: "论文专利"
     url: "#-lwzl"
 
-  - title: "工"
+  - title: "工作经历"
     url: "#-gzjl"
