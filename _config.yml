@@ -21,7 +21,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yang Han(韩洋)"
+  name             : "Yang Han"
   avatar           : "/images/figure_id.jpg?v=2"
   bio              : ""
   location         : ""
