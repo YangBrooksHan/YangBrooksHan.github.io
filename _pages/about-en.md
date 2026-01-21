@@ -66,15 +66,13 @@ hello<a href=''><img src=""></a>
 </div>
 
 
-- Bo Feng, Jianbo Wu, Hongming Tu, `Jian Tang`, Yihua Kang. A Review of Magnetic Flux Leakage Nondestructive Testing. *Materials*. 2022, 15 (20): 7362. (JCR:Q1; IF:3.748)  
-[[网页]](https://dx.doi.org/10.3390/ma15207362) [[预览]](https://github.com/tangjyan/tangjyan.github.io/blob/main/pdf/FengB-2022-A%20Review%20of%20Magnetic%20Flux%20Leakage%20Nondestructive%20Testing.pdf) [[下载]](/pdf/FengB-2022-A%20Review%20of%20Magnetic%20Flux%20Leakage%20Nondestructive%20Testing.pdf)
+- *ICLR2025.*, Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment, xxx xxx, xxx, `Yang Han`, xxx.
 
 
--	Rongbiao Wang, Zhiyang Deng, Rui Liu, Yihua Kang, Jikai Zhang, `Jian Tang`. A large lift-off nondestructive testing method based on the interaction between AC magnetic field and MFL field. *23rd International Workshop on Electromagnetic Nondestructive Evaluation*, ENDE 2018. Detroit, MI, United States: IOS Press. 2019: 44–49. (EI)  
-[[网页]](https://dx.doi.org/10.3233/SAEM190009) [[预览]](https://github.com/tangjyan/tangjyan.github.io/blob/main/pdf/WangR-2019-A%20large%20lift-off%20nondestructive%20testing%20method%20based%20on%20the%20interaction%20between.pdf) [[下载]](/pdf/WangR-2019-A%20large%20lift-off%20nondestructive%20testing%20method%20based%20on%20the%20interaction%20between.pdf)
+- *Findings of ACL2025.*, Reward Generalization in RLHF: A Topological Perspective, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
 
 
-
+- A Survey on the Scheduling of DL and LLM Training Jobs in GPU Clusters, Chinese Journal of Electronics, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
 
 
 ## Patents
