@@ -2,8 +2,12 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
-        <button type="button" aria-label="Toggle menu">
-          <div class="navicon"></div>
+
+        <!-- IMPORTANT: Minimal Mistakes greedy-nav expects this toggle class and navicon span -->
+        <button type="button"
+                class="greedy-nav__toggle"
+                aria-label="Toggle menu">
+          <span class="navicon"></span>
         </button>
 
         <ul class="visible-links">
@@ -29,13 +33,19 @@
           {% endif %}
 
           {% for link in nav %}
+            {% assign href = link.url %}
+            {% assign first_char = href | slice: 0, 1 %}
+            {% if first_char != '#' %}
+              {% assign href = href | relative_url %}
+            {% endif %}
+
             <li class="masthead__menu-item">
-              <a href="{{ link.url }}">{{ link.title }}</a>
+              <a href="{{ href }}">{{ link.title }}</a>
             </li>
           {% endfor %}
         </ul>
 
-        <!-- IMPORTANT: greedy-nav needs this -->
+        <!-- IMPORTANT: greedy-nav needs this container -->
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>

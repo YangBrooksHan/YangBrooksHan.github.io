@@ -6,14 +6,6 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  /* Prevent FOUC: hide mobile menu before main.css is loaded */
-  @media (max-width: 768px){
-    html.js #site-nav .visible-links{ display:none; }
-  }
-</style>
-
-
 <script>
   document.documentElement.className =
     document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
@@ -24,11 +16,5 @@
 
 <meta http-equiv="cleartype" content="on">
 
-<!-- In-page nav: smooth scroll WITHOUT showing #hash in the address bar -->
-
 <!-- No-hash smooth scroll (for in-page nav without changing URL) -->
 <script src="{{ '/assets/js/nohash-scroll.js' | relative_url }}"></script>
-
-
-
-
