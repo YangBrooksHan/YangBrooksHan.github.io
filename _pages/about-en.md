@@ -72,7 +72,7 @@ hello<a href=''><img src=""></a>
 - *Findings of ACL2025*, Reward Generalization in RLHF: A Topological Perspective, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
 
 
-- A Survey on the Scheduling of DL and LLM Training Jobs in GPU Clusters, Chinese Journal of Electronics, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
+- A Survey on the Scheduling of DL and LLM Training Jobs in GPU Clusters, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx, Chinese Journal of Electronics.
 
 
 ## Patents
