@@ -71,10 +71,10 @@ redirect_from:
 </div>
 
 
-- *ICLR2025.*, Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment, xxx xxx, xxx, `Yang Han`, xxx.
+- *ICLR2025*, Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment, xxx xxx, xxx, `Yang Han`, xxx.
 
 
-- *Findings of ACL2025.*, Reward Generalization in RLHF: A Topological Perspective, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
+- *Findings of ACL2025*, Reward Generalization in RLHF: A Topological Perspective, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
 
 
 - A Survey on the Scheduling of DL and LLM Training Jobs in GPU Clusters, Chinese Journal of Electronics, xxx, xxx, xxx, xxx, xxx, `Yang Han`, xxx.
