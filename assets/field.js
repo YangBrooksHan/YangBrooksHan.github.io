@@ -81,6 +81,9 @@
   // ---------- targets for each behaviour (normalized units, y down) ----------
   const U = (x) => (x * x - 1) * (x * x - 1);
 
+  // the clip's ball: one projectile arc across a frame, tau in [0, 1]
+  const arcAt = (f, tau) => [f.x0 + f.fw * (0.12 + 0.76 * tau), f.y0 + f.fh * (0.82 - 3.0 * tau * (1 - tau))];
+
   function frames() {
     const narrow = W < 520;
     const fw = narrow ? 1.5 : 0.78, fh = narrow ? 0.62 : 0.6, gap = 0.08;
@@ -88,10 +91,10 @@
     for (let k = 0; k < 3; k++) {
       const x0 = narrow ? -fw / 2 : -1.5 * fw - gap + k * (fw + gap);
       const y0 = narrow ? -1.05 + k * (fh + gap) : -fh / 2;
+      const f = { x0, y0, fw, fh };
       const tau = (t * 0.55 + k * 0.18) % 1;            // consecutive frames of one clip
-      const bx = x0 + fw * (0.12 + 0.76 * tau);
-      const by = y0 + fh * (0.82 - 3.0 * tau * (1 - tau)); // projectile arc
-      out.push({ x0, y0, fw, fh, bx, by });
+      [f.bx, f.by] = arcAt(f, tau);
+      out.push(f);
     }
     return out;
   }
@@ -197,10 +200,19 @@
       });
     } else if (mode === 1) {
       edges.forEach(([a, b]) => { ctx.moveTo(cx + nodes[a].x * S, cy + nodes[a].y * S); ctx.lineTo(cx + nodes[b].x * S, cy + nodes[b].y * S); });
+    } else if (mode === 2) {                             // the shared trajectory, faint and dashed
+      ctx.setLineDash([3, 5]);
+      ctxData.forEach((f) => {
+        for (let k = 0; k <= 40; k++) {
+          const [x, y] = arcAt(f, k / 40);
+          k ? ctx.lineTo(cx + x * S, cy + y * S) : ctx.moveTo(cx + x * S, cy + y * S);
+        }
+      });
     } else if (mode === 3) {
       ctxData.bones.forEach(([a, b]) => { ctx.moveTo(cx + a[0] * S, cy + a[1] * S); ctx.lineTo(cx + b[0] * S, cy + b[1] * S); });
     }
     ctx.stroke();
+    ctx.setLineDash([]);
     if (mode === 1) {
       ctx.fillStyle = col.hue[1];
       nodes.forEach((q) => { ctx.beginPath(); ctx.arc(cx + q.x * S, cy + q.y * S, 3, 0, Math.PI * 2); ctx.fill(); });
