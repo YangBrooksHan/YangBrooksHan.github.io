@@ -81,7 +81,9 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .path { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-block: 0 10vh; }
 .path a { --c: var(--c0); text-decoration: none; display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: baseline;
   color: var(--faint); transition: color .4s; }
-.path a:nth-child(2) { --c: var(--c1); } .path a:nth-child(3) { --c: var(--c2); } .path a:nth-child(4) { --c: var(--c3); }
+.path a[data-mode="1"], .chapter[data-mode="1"] { --c: var(--c1); }
+.path a[data-mode="2"], .chapter[data-mode="2"] { --c: var(--c2); }
+.path a[data-mode="3"], .chapter[data-mode="3"] { --c: var(--c3); }
 .path .n { grid-row: span 2; width: 1.1em; text-align: center; font: 300 30px/1 var(--math); color: var(--c); }
 .path .k { font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--c); }
 .path .v { font-size: 14px; }
@@ -109,7 +111,6 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .chapters { display: flex; flex-direction: column; }
 .lead { font: 300 24px/1.5 var(--serif); margin: 0; padding-block: 4vh 0; text-wrap: pretty; }
 .chapter { --c: var(--c0); min-height: 76vh; padding-block: 12vh; scroll-margin-top: var(--nav); opacity: .32; transition: opacity .9s; }
-.chapter:nth-of-type(2) { --c: var(--c1); } .chapter:nth-of-type(3) { --c: var(--c2); } .chapter:nth-of-type(4) { --c: var(--c3); }
 .chapter.on, .no-js .chapter { opacity: 1; }
 .chapter .glyph { font: 300 60px/1 var(--math); color: var(--c); }
 .chapter .num { margin-top: 16px; font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--c); }

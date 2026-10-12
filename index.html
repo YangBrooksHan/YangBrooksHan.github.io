@@ -46,10 +46,10 @@
   </header>
 
   <div class="path reveal" aria-label="Career path">
-    <a href="#p-math"><span class="n">∂</span><span class="k">Equations</span><span class="v">PKU · JLU</span></a>
-    <a href="#p-telecom"><span class="n">⌗</span><span class="k">Systems</span><span class="v">China Telecom</span></a>
-    <a href="#p-vidu"><span class="n">▶︎</span><span class="k">Pixels</span><span class="v">Vidu</span></a>
-    <a href="#p-delta"><span class="n">Δ</span><span class="k">Actions</span><span class="v">Humanoids</span></a>
+    <a href="#p-delta" data-mode="3"><span class="n">Δ</span><span class="k">Actions</span><span class="v">Humanoids</span></a>
+    <a href="#p-vidu" data-mode="2"><span class="n">▶︎</span><span class="k">Pixels</span><span class="v">Vidu</span></a>
+    <a href="#p-telecom" data-mode="1"><span class="n">⌗</span><span class="k">Systems</span><span class="v">China Telecom</span></a>
+    <a href="#p-math" data-mode="0"><span class="n">∂</span><span class="k">Equations</span><span class="v">PKU · JLU</span></a>
   </div>
 
   <blockquote class="epigraph reveal"><p>“What I cannot create, I do not understand.”</p><cite>Richard Feynman</cite></blockquote>
@@ -67,25 +67,16 @@
 
     <div class="chapters">
       <p class="lead">One question runs through my work: how do living systems come to understand and act in the world — and how can machines learn to do the same? I approach intelligence the way a systems biologist approaches a cell: as a stochastic, multiscale, adaptive dynamical system.</p>
-      <article class="chapter" id="p-math">
-        <div class="glyph">∂</div>
-        <div class="num">Equations</div>
-        <h3>Peking University · Jilin University</h3>
-        <p class="role">M.S. in Computational Mathematics, School of Mathematical Sciences, Peking University<br>B.S. in Information &amp; Computing Science, School of Mathematics, Jilin University</p>
-        <p>AI × Science and systems biology, advised by Prof. <a href="https://math.pku.edu.cn/teachers/litj/">Tiejun Li</a>.</p>
-        <blockquote><b>Systems biology as a lens</b><span>Working on AI × Science with Prof. Tiejun Li, I learned to model biological systems as stochastic, multiscale dynamics. It shaped how I see intelligence: not a single algorithm, but an adaptive system of many interacting parts.</span></blockquote>
+      <article class="chapter" id="p-delta" data-mode="3">
+        <div class="glyph">Δ</div>
+        <div class="num">Actions</div>
+        <h3>Delta Intelligence</h3>
+        <p class="role">Humanoid foundation model training</p>
+        <p>Training Δ₀, a humanoid foundation model for whole-body loco-manipulation. Delta is incubated by the <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a>; I work with Dr. <a href="https://jeasinema.github.io/">Xiaojian Ma</a>, Dr. <a href="https://siyuanhuang.com/">Siyuan Huang</a>, and Dr. <a href="https://buzz-beater.github.io/">Baoxiong Jia</a>.</p>
+        <blockquote><b>Natural intelligence as the teacher</b><span>Humans are the most capable embodied intelligence we know. Δ₀ learns from large-scale human motion data, turning how people move and handle objects into skills for humanoid robots.</span></blockquote>
       </article>
 
-      <article class="chapter" id="p-telecom">
-        <div class="glyph">⌗</div>
-        <div class="num">Systems</div>
-        <h3>China Telecom Beijing Research Institute</h3>
-        <p class="role">Senior Engineer</p>
-        <p>National- and industrial-grade communication networks, data, and systems — how information is exchanged, and how the infrastructure behind it is built.</p>
-        <blockquote><b>How a society moves information</b><span>I saw from the inside how a large enterprise and a national operator run: how information is exchanged at societal scale, and how the infrastructure beneath it is designed, built, and kept alive. A communication network is a society's nervous system, and every terminal — mobile or fixed — is one of its nerve endings. Any intelligence, natural or artificial, rests on how information flows.</span></blockquote>
-      </article>
-
-      <article class="chapter" id="p-vidu">
+      <article class="chapter" id="p-vidu" data-mode="2">
         <div class="glyph">▶︎</div>
         <div class="num">Pixels</div>
         <h3>ShengShu Technology · Vidu</h3>
@@ -94,13 +85,22 @@
         <blockquote><b>Learning the world by watching</b><span>Animals build an internal model of the world largely from what they see. Training video foundation models is the machine version: learning physics, objects, and causality from pixels.</span></blockquote>
       </article>
 
-      <article class="chapter" id="p-delta">
-        <div class="glyph">Δ</div>
-        <div class="num">Actions</div>
-        <h3>Delta Intelligence</h3>
-        <p class="role">Humanoid foundation model training</p>
-        <p>Training Δ₀, a humanoid foundation model for whole-body loco-manipulation. Delta is incubated by the <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a>; I work with Dr. <a href="https://jeasinema.github.io/">Xiaojian Ma</a>, Dr. <a href="https://siyuanhuang.com/">Siyuan Huang</a>, and Dr. <a href="https://buzz-beater.github.io/">Baoxiong Jia</a>.</p>
-        <blockquote><b>Natural intelligence as the teacher</b><span>Humans are the most capable embodied intelligence we know. Δ₀ learns from large-scale human motion data, turning how people move and handle objects into skills for humanoid robots.</span></blockquote>
+      <article class="chapter" id="p-telecom" data-mode="1">
+        <div class="glyph">⌗</div>
+        <div class="num">Systems</div>
+        <h3>China Telecom Beijing Research Institute</h3>
+        <p class="role">Senior Engineer</p>
+        <p>National- and industrial-grade communication networks, data, and systems — how information is exchanged, and how the infrastructure behind it is built.</p>
+        <blockquote><b>How a society moves information</b><span>I saw from the inside how a large enterprise and a national operator run: how information is exchanged at societal scale, and how the infrastructure beneath it is designed, built, and kept alive. A communication network is a society's nervous system, and every terminal — mobile or fixed — is one of its nerve endings. Any intelligence, natural or artificial, rests on how information flows.</span></blockquote>
+      </article>
+
+      <article class="chapter" id="p-math" data-mode="0">
+        <div class="glyph">∂</div>
+        <div class="num">Equations</div>
+        <h3>Peking University · Jilin University</h3>
+        <p class="role">M.S. in Computational Mathematics, School of Mathematical Sciences, Peking University<br>B.S. in Information &amp; Computing Science, School of Mathematics, Jilin University</p>
+        <p>AI × Science and systems biology, advised by Prof. <a href="https://math.pku.edu.cn/teachers/litj/">Tiejun Li</a>.</p>
+        <blockquote><b>Systems biology as a lens</b><span>Working on AI × Science with Prof. Tiejun Li, I learned to model biological systems as stochastic, multiscale dynamics. It shaped how I see intelligence: not a single algorithm, but an adaptive system of many interacting parts.</span></blockquote>
       </article>
     </div>
   </section>

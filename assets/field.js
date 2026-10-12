@@ -254,22 +254,23 @@
     if (reduce) still();
   }
 
+  // chapters run newest-first; each names the behaviour it shows via data-mode
+  const chapters = [...document.querySelectorAll('.chapter')];
+  mode = chapters.length ? Number(chapters[0].dataset.mode) : 0;
   readColors(); buildNetwork(); resize();
-  stage.dataset.mode = '0';
+  stage.dataset.mode = String(mode);
   addEventListener('resize', () => { resize(); if (reduce) still(); });
   addEventListener('themechange', () => { readColors(); ctx.fillStyle = col.bg; ctx.fillRect(0, 0, W, H); if (reduce) still(); });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => dispatchEvent(new Event('themechange')));
   document.addEventListener('visibilitychange', setRunning);
 
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; setRunning(); }).observe(stage);
-  const chapters = [...document.querySelectorAll('.chapter')];
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      const i = chapters.indexOf(e.target);
-      chapters.forEach((c, j) => c.classList.toggle('on', j === i));
-      document.querySelectorAll('.path a').forEach((a, j) => a.classList.toggle('on', j === i));
-      setMode(i);
+      chapters.forEach((c) => c.classList.toggle('on', c === e.target));
+      document.querySelectorAll('.path a').forEach((a) => a.classList.toggle('on', a.hash === '#' + e.target.id));
+      setMode(Number(e.target.dataset.mode));
     });
   }, { rootMargin: '-45% 0px -45% 0px' });
   chapters.forEach((c) => io.observe(c));
