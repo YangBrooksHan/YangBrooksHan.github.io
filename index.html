@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yang Brooks Han</title>
 <meta name="description" content="Yang Brooks Han — from mathematics to embodied intelligence: video foundation models and humanoid foundation models.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23c2410c'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='white' font-family='Georgia'>∂</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23090b11'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23ffb547' font-family='Georgia'>Δ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&family=Geist+Mono&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <script>
   try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -17,11 +17,11 @@
 <body>
 <nav>
   <div class="wrap">
-    <a class="brand" href="#">Yang Brooks Han</a>
+    <a class="brand" href="#">Yang<span class="rest"> Brooks Han</span><b>.</b></a>
+    <a href="#journey">Journey</a>
     <a href="#work">Work</a>
-    <a href="#path">Path</a>
-    <a href="#thread">Thread</a>
     <a href="#writing">Writing</a>
+    <a href="#contact">Contact</a>
     <button id="theme" aria-label="Toggle dark mode">◐</button>
   </div>
 </nav>
@@ -29,97 +29,108 @@
 <main class="wrap">
   <header class="hero">
     <div>
+      <span class="eyebrow">Foundation models · embodied intelligence</span>
       <h1>From equations<br>to <em>embodiment</em>.</h1>
       <p>I'm Yang. I train foundation models that learn to see, imagine, and act — today <b>humanoid foundation models</b> at Delta Intelligence, and before that <b>video generation foundation models</b> for Vidu at ShengShu.</p>
-      <p>I was trained in computational mathematics, working on AI&nbsp;×&nbsp;Science at Peking University, then spent years as a senior engineer on industrial-grade communication networks, data, and systems. I like problems where clean math meets messy engineering at scale.</p>
-      <p>A thread runs through all of it: <b>natural intelligence</b> and <b>systems biology</b>. Studying living systems as dynamics shaped how I think about building machines that perceive and act.</p>
+      <p>My roots are in computational mathematics and AI&nbsp;×&nbsp;Science at Peking University, then years as a senior engineer on national-scale communication networks. Both taught me to see intelligence — <b>natural</b> or artificial — as a dynamical system shaped by how information flows.</p>
       <div class="links">
         <a href="mailto:yangbrooks.han@gmail.com">Email</a>
         <a href="https://github.com/YangBrooksHan">GitHub</a>
+        <a href="https://deltai.com/en/blog/delta-0">Δ₀ blog</a>
       </div>
     </div>
-    <img src="https://github.com/YangBrooksHan.png" alt="Portrait of Yang Brooks Han">
+    <div class="portrait"><img src="https://github.com/YangBrooksHan.png" alt="Portrait of Yang Brooks Han"></div>
   </header>
 
   <div class="path" aria-label="Career path">
-    <a href="#p-math"><span class="dot">∂</span><span class="k">equations</span><span class="v">JLU · PKU</span></a>
-    <a href="#p-telecom"><span class="dot">⌗</span><span class="k">systems</span><span class="v">China Telecom</span></a>
-    <a href="#p-vidu"><span class="dot">▶</span><span class="k">pixels</span><span class="v">Vidu</span></a>
-    <a href="#p-delta"><span class="dot">Δ</span><span class="k">actions</span><span class="v">Humanoids</span></a>
+    <a href="#p-math"><span class="g">∂</span><span class="k">equations</span><span class="v">JLU · PKU</span></a>
+    <a href="#p-telecom"><span class="g">⌗</span><span class="k">systems</span><span class="v">China Telecom</span></a>
+    <a href="#p-vidu"><span class="g">▶</span><span class="k">pixels</span><span class="v">Vidu</span></a>
+    <a href="#p-delta"><span class="g">Δ</span><span class="k">actions</span><span class="v">Humanoids</span></a>
   </div>
 
+  <section id="journey" class="journey" aria-label="Journey">
+    <figure class="stage" aria-hidden="true">
+      <canvas></canvas>
+      <figcaption>
+        <span class="cap" data-c="0"><span class="eq">dx = −∇U(x) dt + √(2T) dW</span><small>stochastic dynamics in a double-well landscape: noise, attractors, switching</small></span>
+        <span class="cap" data-c="1"><span class="eq">packets on a graph</span><small>information routed across a network, a society's nervous system</small></span>
+        <span class="cap" data-c="2"><span class="eq">x<sub>0</sub> ← denoise(x<sub>T</sub>, c)</span><small>frames resolved out of noise; a ball following a physical arc</small></span>
+        <span class="cap" data-c="3"><span class="eq">a<sub>t</sub> ∼ π(a | o<sub>t</sub>)</span><small>one whole-body policy: walking while reaching</small></span>
+      </figcaption>
+    </figure>
+
+    <div class="chapters">
+      <p class="lead">One question runs through my work: how do living systems come to understand and act in the world — and how can machines learn to do the same? I approach intelligence the way a systems biologist approaches a cell: as a stochastic, multiscale, adaptive dynamical system.</p>
+      <article class="chapter" id="p-math">
+        <div class="glyph">∂</div>
+        <span class="k">equations</span>
+        <h3>Peking University · Jilin University</h3>
+        <p class="role">M.S. in Computational Mathematics, PKU · B.S. in Information &amp; Computing Science, School of Mathematics, JLU</p>
+        <p>AI × Science and systems biology, advised by Prof. <a href="https://math.pku.edu.cn/teachers/litj/">Tiejun Li</a>.</p>
+        <blockquote><b>Systems biology as a lens</b>Working on AI × Science with Prof. Tiejun Li, I learned to model biological systems as stochastic, multiscale dynamics. It shaped how I see intelligence: not a single algorithm, but an adaptive system of many interacting parts.</blockquote>
+      </article>
+
+      <article class="chapter" id="p-telecom">
+        <div class="glyph">⌗</div>
+        <span class="k">systems</span>
+        <h3>China Telecom Beijing Research Institute</h3>
+        <p class="role">Senior Engineer</p>
+        <p>Industrial-grade communication networks, data, and systems — how a national operator exchanges information and builds the infrastructure behind it.</p>
+        <blockquote><b>How a society moves information</b>I saw from the inside how a large enterprise and a national operator run: how information is exchanged at societal scale, and how the infrastructure beneath it is designed, built, and kept alive. A communication network is a society's nervous system, and every terminal — mobile or fixed — is one of its nerve endings. Any intelligence, natural or artificial, rests on how information flows.</blockquote>
+      </article>
+
+      <article class="chapter" id="p-vidu">
+        <div class="glyph">▶</div>
+        <span class="k">pixels</span>
+        <h3>ShengShu Technology · Vidu</h3>
+        <p class="role">Video generation foundation models</p>
+        <p>Trained the video generation foundation models behind Vidu. ShengShu was founded out of Prof. <a href="https://ml.cs.tsinghua.edu.cn/~jun/index.shtml">Jun Zhu</a>'s lab at Tsinghua University.</p>
+        <blockquote><b>Learning the world by watching</b>Animals build an internal model of the world largely from what they see. Training video foundation models is the machine version: learning physics, objects, and causality from pixels.</blockquote>
+      </article>
+
+      <article class="chapter" id="p-delta">
+        <div class="glyph">Δ</div>
+        <span class="k">actions</span>
+        <h3>Delta Intelligence</h3>
+        <p class="role">Humanoid foundation model training</p>
+        <p>Training Δ₀, a humanoid foundation model for whole-body loco-manipulation. Delta is incubated by the <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a>; I work with Dr. <a href="https://jeasinema.github.io/">Xiaojian Ma</a>, Dr. <a href="https://siyuanhuang.com/">Siyuan Huang</a>, and Dr. <a href="https://buzz-beater.github.io/">Baoxiong Jia</a>.</p>
+        <blockquote><b>Natural intelligence as the teacher</b>Humans are the most capable embodied intelligence we know. Δ₀ learns from large-scale human motion data, turning how people move and handle objects into skills for humanoid robots.</blockquote>
+      </article>
+    </div>
+  </section>
+
   <section id="work">
-    <h2>Featured work <small>selected</small></h2>
-    <a class="feature" href="https://deltai.com/en/blog/delta-0">
-      <span class="eyebrow">Humanoid foundation model</span>
-      <h3>Δ<sub>0</sub> — whole-body loco-manipulation for humanoids</h3>
-      <p>A single generalist policy that coordinates perception, locomotion, and dexterous manipulation across 69 DoFs, pretrained on large-scale human motion data. I work on training this humanoid foundation model at Delta Intelligence.</p>
-      <span class="go">Read the blog →</span>
-    </a>
-    <div class="grid2">
-      <a class="feature" href="https://www.vidu.com/">
-        <span class="eyebrow">Video foundation model</span>
+    <h2><small>selected</small>Featured work</h2>
+    <div class="cards">
+      <a class="card big" href="https://deltai.com/en/blog/delta-0">
+        <span class="k">Humanoid foundation model</span>
+        <h3>Δ<sub>0</sub> — whole-body loco-manipulation for humanoids</h3>
+        <p>A single generalist policy that coordinates perception, locomotion, and dexterous manipulation across 69 DoFs, pretrained on large-scale human motion data. I work on training this humanoid foundation model at Delta Intelligence.</p>
+        <span class="go">Read the blog →</span>
+      </a>
+      <a class="card" href="https://www.vidu.com/" style="--c: var(--c2)">
+        <span class="k">Video foundation model</span>
         <h3>Vidu</h3>
         <p>Training video generation foundation models at ShengShu Technology.</p>
         <span class="go">vidu.com →</span>
       </a>
-      <div class="feature">
-        <span class="eyebrow">Industrial systems</span>
-        <h3>Network · Data · Systems</h3>
-        <p>Senior engineer on China Telecom's industrial-grade communication networks, data, and systems — information exchange and infrastructure at societal scale.</p>
-      </div>
     </div>
   </section>
 
-  <section id="path">
-    <h2>Path <small>experience &amp; education</small></h2>
-    <ol class="timeline">
-      <li id="p-delta">
-        <div class="when"><span class="tag">actions</span></div>
-        <div class="org">Delta Intelligence <span>· Humanoid foundation model training</span></div>
-        <p>Training Δ₀, a humanoid foundation model for whole-body loco-manipulation. Delta is incubated by the <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a>; I work with Dr. <a href="https://jeasinema.github.io/">Xiaojian Ma</a>, Dr. <a href="https://siyuanhuang.com/">Siyuan Huang</a>, and Dr. <a href="https://buzz-beater.github.io/">Baoxiong Jia</a>.</p>
-      </li>
-      <li id="p-vidu">
-        <div class="when"><span class="tag">pixels</span></div>
-        <div class="org">ShengShu Technology <span>· Video generation foundation models</span></div>
-        <p>Trained the video generation foundation models behind Vidu. ShengShu was founded out of Prof. <a href="https://ml.cs.tsinghua.edu.cn/~jun/index.shtml">Jun Zhu</a>'s lab at Tsinghua University.</p>
-      </li>
-      <li id="p-telecom">
-        <div class="when"><span class="tag">systems</span></div>
-        <div class="org">China Telecom Beijing Research Institute <span>· Senior Engineer</span></div>
-        <p>Industrial-grade communication networks, data, and systems — how a national operator exchanges information and builds the infrastructure behind it.</p>
-      </li>
-      <li id="p-math">
-        <div class="when"><span class="tag">equations</span></div>
-        <div class="org">Peking University <span>· M.S. in Computational Mathematics</span></div>
-        <p>AI × Science and systems biology, advised by Prof. <a href="https://math.pku.edu.cn/teachers/litj/">Tiejun Li</a>.</p>
-      </li>
-      <li>
-        <div class="when"><span class="tag">equations</span></div>
-        <div class="org">Jilin University <span>· B.S. in Information &amp; Computing Science, School of Mathematics</span></div>
-      </li>
-    </ol>
-  </section>
-
-  <section id="thread">
-    <h2>The thread <small>natural intelligence &amp; systems biology</small></h2>
-    <p>One question runs through my work: how do living systems come to understand and act in the world — and how can machines learn to do the same? I approach intelligence the way a systems biologist approaches a cell: as a stochastic, multiscale, adaptive dynamical system.</p>
-    <ul class="rows">
-      <li><time>PKU</time><div><b>Systems biology as a lens</b><span class="meta">Working on AI × Science with Prof. Tiejun Li, I learned to model biological systems as stochastic, multiscale dynamics. It shaped how I see intelligence: not a single algorithm, but an adaptive system of many interacting parts.</span></div></li>
-      <li><time>Telecom</time><div><b>How a society moves information</b><span class="meta">As a senior engineer at China Telecom Beijing Research Institute, I saw from the inside how a large enterprise and a national operator run: how information is exchanged at societal scale, and how the infrastructure beneath it is designed, built, and kept alive. A communication network is a society's nervous system, and every terminal — mobile or fixed — is one of its nerve endings. Any intelligence, natural or artificial, rests on how information flows.</span></div></li>
-      <li><time>Vidu</time><div><b>Learning the world by watching</b><span class="meta">Animals build an internal model of the world largely from what they see. Training video foundation models is the machine version: learning physics, objects, and causality from pixels.</span></div></li>
-      <li><time>Δ₀</time><div><b>Natural intelligence as the teacher</b><span class="meta">Humans are the most capable embodied intelligence we know. Δ₀ learns from large-scale human motion data, turning how people move and handle objects into skills for humanoid robots.</span></div></li>
-    </ul>
-  </section>
-
   <section id="writing">
-    <h2>Writing <small>notes &amp; posts</small></h2>
+    <h2><small>notes &amp; posts</small>Writing</h2>
     <ul class="rows">
       <li><time>blog</time><div><a href="https://deltai.com/en/blog/delta-0"><b>Δ₀: A New Chapter in Humanoid Intelligence</b></a><span class="meta">Delta Intelligence blog — introducing our humanoid foundation model.</span></div></li>
     </ul>
   </section>
 
-  <footer>© 2026 Yang Brooks Han · Built by hand, hosted on GitHub Pages.</footer>
+  <section id="contact" class="contact">
+    <h2><small>contact</small>Let's build things that see, imagine, and act.</h2>
+    <a class="mail" href="mailto:yangbrooks.han@gmail.com">yangbrooks.han@gmail.com</a>
+  </section>
+
+  <footer>© 2026 Yang Brooks Han · Hosted on GitHub Pages.</footer>
 </main>
 
 <script>
@@ -128,6 +139,7 @@
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     root.dataset.theme = dark ? 'light' : 'dark';
     try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    dispatchEvent(new Event('themechange'));
   });
   const navLinks = [...document.querySelectorAll('nav a[href^="#"]:not(.brand)')];
   const spy = () => {
@@ -139,5 +151,6 @@
   addEventListener('scroll', spy, { passive: true });
   spy();
 </script>
+<script src="assets/field.js" defer></script>
 </body>
 </html>
