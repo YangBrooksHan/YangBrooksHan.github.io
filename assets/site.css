@@ -68,7 +68,7 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .hero p { margin: 0 0 14px; font-size: 17px; max-width: 60ch; color: var(--muted); }
 .hero p b { color: var(--fg); font-weight: 500; }
 .portrait img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; display: block; background: var(--surface);
-  filter: grayscale(1) contrast(1.05); opacity: .9; }
+}
 .links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 32px; font: 12px var(--mono); letter-spacing: .06em; }
 .links a { text-decoration: none; color: var(--muted); transition: color .3s; }
 .links a::after { content: " ↗"; color: var(--faint); }
