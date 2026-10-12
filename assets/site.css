@@ -2,8 +2,8 @@
    whitespace for structure, colour only as small marks. One pinned particle
    stage illustrates each chapter of the journey as it scrolls past.
    Palette = the colour temperature of starlight, cold to warm, mirroring the
-   path from abstraction to embodiment: I equations (cold blue), II systems
-   (cyan, information flow), III pixels (pale gold, light), IV actions (ember,
+   path from abstraction to embodiment: ∂ equations (cold blue), ⌗ systems
+   (cyan, information flow), ▶ pixels (pale gold, light), Δ actions (ember,
    body heat). Muted on purpose; the backdrop's stars share the same four. */
 :root {
   --bg: #f6f4ef;
@@ -12,10 +12,10 @@
   --muted: #5f5b53;
   --faint: #9a958b;
   --line: #dcd7cc;
-  --c0: #4b55a8;   /* I   equations */
-  --c1: #2c6c80;   /* II  systems   */
-  --c2: #8a6a22;   /* III pixels    */
-  --c3: #a4532c;   /* IV  actions   */
+  --c0: #4b55a8;   /* ∂ equations */
+  --c1: #2c6c80;   /* ⌗ systems   */
+  --c2: #8a6a22;   /* ▶ pixels    */
+  --c3: #a4532c;   /* Δ actions   */
   --stage-bg: #ece8e0;
   --stage-line: rgba(28, 27, 24, 0.12);
   --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
@@ -79,7 +79,7 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .path a { --c: var(--c0); text-decoration: none; display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: baseline;
   color: var(--faint); transition: color .4s; }
 .path a:nth-child(2) { --c: var(--c1); } .path a:nth-child(3) { --c: var(--c2); } .path a:nth-child(4) { --c: var(--c3); }
-.path .n { grid-row: span 2; font: italic 300 30px/1 var(--serif); color: var(--c); }
+.path .n { grid-row: span 2; width: 1.1em; text-align: center; font: 300 30px/1 var(--math); color: var(--c); }
 .path .k { font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; }
 .path .v { font-size: 14px; }
 .path a:hover, .path a.on { color: var(--fg); }
@@ -107,8 +107,8 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .chapter { --c: var(--c0); min-height: 76vh; padding-block: 12vh; scroll-margin-top: var(--nav); opacity: .32; transition: opacity .9s; }
 .chapter:nth-of-type(2) { --c: var(--c1); } .chapter:nth-of-type(3) { --c: var(--c2); } .chapter:nth-of-type(4) { --c: var(--c3); }
 .chapter.on, .no-js .chapter { opacity: 1; }
-.chapter .num { font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
-.chapter .num i { font: italic 300 22px var(--serif); letter-spacing: 0; text-transform: none; color: var(--c); margin-right: 10px; }
+.chapter .glyph { font: 300 60px/1 var(--math); color: var(--c); }
+.chapter .num { margin-top: 16px; font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--c); }
 .chapter h3 { font: 400 32px/1.15 var(--serif); letter-spacing: -0.01em; margin: 18px 0 6px; text-wrap: balance; }
 .chapter .role { color: var(--faint); font-size: 14px; margin: 0 0 22px; }
 .chapter p { margin: 0 0 14px; max-width: 58ch; color: var(--muted); }
