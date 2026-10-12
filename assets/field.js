@@ -30,6 +30,14 @@
     const cs = getComputedStyle(stage);
     const v = (n) => cs.getPropertyValue(n).trim();
     col = { hue: [v('--c0'), v('--c1'), v('--c2'), v('--c3')], bg: v('--stage-bg'), line: v('--stage-line') };
+    // each chapter draws from a short band of the colormap centred on its own
+    // stop, leaning toward its neighbours, so the stage shifts gradually
+    const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+    const mix = (a, b, w) => 'rgb(' + rgb(a).map((x, i) => Math.round(x + (rgb(b)[i] - x) * w)).join(',') + ')';
+    col.band = col.hue.map((c, m) => {
+      const prev = col.hue[Math.max(0, m - 1)], next = col.hue[Math.min(3, m + 1)];
+      return [mix(c, prev, 0.45), mix(c, prev, 0.2), c, mix(c, next, 0.2), mix(c, next, 0.45)];
+    });
   }
 
   function buildNetwork() {
@@ -214,8 +222,13 @@
     ctx.fillStyle = col.bg; ctx.fillRect(0, 0, W, H);
     ctx.globalAlpha = 1;
     drawBackdrop(data);
-    ctx.fillStyle = col.hue[mode];
-    for (const p of P) { ctx.globalAlpha = p.a; ctx.fillRect(p.x - 1, p.y - 1, 2, 2); }
+    col.band[mode].forEach((shade, k) => {
+      ctx.fillStyle = shade;
+      for (const p of P) {
+        if (Math.min(4, Math.floor(p.r * 5)) !== k) continue;
+        ctx.globalAlpha = p.a; ctx.fillRect(p.x - 1, p.y - 1, 2, 2);
+      }
+    });
     ctx.globalAlpha = 1;
   }
 
