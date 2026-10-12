@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yang Brooks Han</title>
 <meta name="description" content="Yang Brooks Han — from mathematics to embodied intelligence: video foundation models and humanoid foundation models.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23090b11'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23ffb547' font-family='Georgia'>Δ</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23090b11'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23ff9e64' font-family='Georgia'>Δ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&family=Geist+Mono&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
 </script>
 </head>
 <body>
+<canvas id="cosmos" aria-hidden="true"></canvas>
 <nav>
   <div class="wrap">
     <a class="brand" href="#">Yang<span class="rest"> Brooks Han</span><b>.</b></a>
@@ -153,7 +154,7 @@
   spy();
   const io = new IntersectionObserver((es) => es.forEach((e) => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { rootMargin: '0px 0px -12% 0px' });
+  }), { rootMargin: '0px 0px -4% 0px' });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   document.querySelectorAll('.card').forEach((card) => card.addEventListener('pointermove', (e) => {
     const r = card.getBoundingClientRect();
@@ -162,5 +163,6 @@
   }));
 </script>
 <script src="assets/field.js" defer></script>
+<script src="assets/cosmos.js" defer></script>
 </body>
 </html>

@@ -1,8 +1,11 @@
 /* Layout: sticky nav; a typographic hero over a drifting aurora; a scroll-driven
    "journey" where one pinned particle stage changes behaviour as each chapter
-   passes; then work, writing and contact. Each life chapter owns a hue:
-   equations, systems, pixels, actions. Depth comes from tint, glow and
-   gradient — no borders. */
+   passes; then work, writing and contact. Depth comes from tint, glow and
+   gradient — no borders.
+   Palette = the colour temperature of starlight, cold to warm, mirroring the
+   path from abstraction to embodiment: equations (cold blue-violet), systems
+   (cyan, information flow), pixels (warm white-gold, light), actions (amber,
+   body heat). The backdrop's stars are tinted from the same four. */
 :root {
   --bg: #f3f5fa;
   --surface: #ffffff;
@@ -10,13 +13,13 @@
   --muted: #545c70;
   --faint: #8d94a6;
   --line: #dfe3ec;
-  --c0: #4f5bd5;   /* equations */
-  --c1: #0e9384;   /* systems */
-  --c2: #d1367a;   /* pixels */
-  --c3: #c46f00;   /* actions */
+  --c0: #4a52cc;   /* equations: cold blue-violet */
+  --c1: #1a7aa6;   /* systems: cyan, information flow */
+  --c2: #9a7414;   /* pixels: warm white-gold, light */
+  --c3: #c0541c;   /* actions: amber, body heat */
   --stage-bg: #e9edf6;
   --stage-line: rgba(14, 18, 32, 0.12);
-  --glow: 0.22;
+  --glow: 0.18;
   --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
   --sans: "Geist", -apple-system, "Segoe UI", system-ui, sans-serif;
   --mono: "Geist Mono", ui-monospace, Menlo, monospace;
@@ -26,15 +29,15 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #090b11; --surface: #11141c; --fg: #e9ebf2; --muted: #a0a7b8; --faint: #687087; --line: #1f2431;
-    --c0: #8e9bff; --c1: #33d6c2; --c2: #ff6aac; --c3: #ffb547;
-    --stage-bg: #0c0f17; --stage-line: rgba(233, 235, 242, 0.1); --glow: 0.38;
+    --c0: #8f97ff; --c1: #67c6ee; --c2: #e9cf8a; --c3: #ff9e64;
+    --stage-bg: #0c0f17; --stage-line: rgba(233, 235, 242, 0.1); --glow: 0.3;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #090b11; --surface: #11141c; --fg: #e9ebf2; --muted: #a0a7b8; --faint: #687087; --line: #1f2431;
-  --c0: #8e9bff; --c1: #33d6c2; --c2: #ff6aac; --c3: #ffb547;
-  --stage-bg: #0c0f17; --stage-line: rgba(233, 235, 242, 0.1); --glow: 0.38;
+  --c0: #8f97ff; --c1: #67c6ee; --c2: #e9cf8a; --c3: #ff9e64;
+  --stage-bg: #0c0f17; --stage-line: rgba(233, 235, 242, 0.1); --glow: 0.3;
   color-scheme: dark;
 }
 @property --spin { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
@@ -45,6 +48,7 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(-
 a { color: inherit; text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; }
 a:hover { text-decoration-color: currentColor; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--c3); outline-offset: 3px; border-radius: 4px; }
+#cosmos { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
 .wrap { max-width: 1140px; margin: 0 auto; padding-inline: 24px; }
 
 /* nav (pinned, opaque; a soft fade instead of a rule) */
@@ -71,9 +75,8 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 @keyframes drift { to { transform: translate3d(4%, 6%, 0) rotate(6deg) scale(1.08); } }
 .eyebrow { font: 12px var(--mono); color: var(--faint); letter-spacing: 0.08em; text-transform: uppercase; }
 .hero h1 { font: 800 clamp(48px, 8.4vw, 108px)/0.95 var(--display); letter-spacing: -0.035em; margin: 14px 0 26px; text-wrap: balance; }
-.hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--c0), var(--c1), var(--c2), var(--c3), var(--c0)) 0 0 / 200% 100%;
-  -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 9s linear infinite; }
-@keyframes shimmer { to { background-position: -200% 0; } }
+.hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--c0), var(--c1) 34%, var(--c2) 67%, var(--c3)) 0 0 / 100% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero p { margin: 0 0 12px; font-size: 18px; max-width: 64ch; color: var(--muted); }
 .hero p b { color: var(--fg); font-weight: 600; }
 .portrait { position: relative; width: 168px; aspect-ratio: 1; border-radius: 50%; padding: 4px; max-width: 100%;
@@ -84,7 +87,7 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .links a { text-decoration: none; font-size: 14px; border-radius: 999px; padding: 8px 18px; background: color-mix(in srgb, var(--fg) 7%, transparent);
   transition: background .25s, color .25s; }
-.links a:hover { color: #fff; background: linear-gradient(90deg, var(--c0), var(--c2)); }
+.links a:hover { color: #fff; background: linear-gradient(90deg, var(--c0), var(--c1)); }
 
 /* the four-stop path, doubles as chapter nav */
 .path { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-block: 8px 24px; }
@@ -140,7 +143,7 @@ h2 small { display: block; font: 12px var(--mono); color: var(--faint); letter-s
   border-radius: 22px; padding: 28px 30px; min-width: 0; transition: transform .35s, box-shadow .35s;
   background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--c) 22%, transparent), transparent 60%),
     color-mix(in srgb, var(--c) 7%, var(--surface)); }
-.card.big { --c: var(--c0);
+.card.big { --c: var(--c3);
   background: radial-gradient(520px circle at var(--mx) var(--my), color-mix(in srgb, var(--c2) 24%, transparent), transparent 60%),
     linear-gradient(125deg, color-mix(in srgb, var(--c0) 16%, var(--surface)), color-mix(in srgb, var(--c1) 10%, var(--surface)) 45%, color-mix(in srgb, var(--c3) 16%, var(--surface))); }
 a.card:hover { transform: translateY(-4px); box-shadow: 0 30px 70px -30px color-mix(in srgb, var(--c) 70%, transparent); }
@@ -159,10 +162,10 @@ a.card:hover .go { transform: translateX(6px); }
 
 .contact { position: relative; isolation: isolate; padding-block: 110px 32px; }
 .contact::before { content: ""; position: absolute; z-index: -1; inset: 20% 10% -10%; filter: blur(80px); opacity: var(--glow);
-  background: radial-gradient(40% 50% at 30% 50%, var(--c2), transparent 70%), radial-gradient(40% 50% at 70% 60%, var(--c0), transparent 70%); }
+  background: radial-gradient(40% 50% at 30% 50%, var(--c3), transparent 70%), radial-gradient(40% 50% at 70% 60%, var(--c2), transparent 70%); }
 .contact h2 { font-size: clamp(36px, 6vw, 72px); }
 .contact a.mail { overflow-wrap: anywhere; font: 700 clamp(20px, 3vw, 30px) var(--display); text-decoration: none;
-  background: linear-gradient(90deg, var(--c3), var(--c2)) 0 100% / 100% 2px no-repeat; padding-bottom: 4px; transition: background-size .3s; }
+  background: linear-gradient(90deg, var(--c2), var(--c3)) 0 100% / 100% 2px no-repeat; padding-bottom: 4px; transition: background-size .3s; }
 .contact a.mail:hover { background-size: 100% 100%; color: #fff; }
 footer { padding-block: 40px 48px; color: var(--faint); font-size: 13px; }
 
