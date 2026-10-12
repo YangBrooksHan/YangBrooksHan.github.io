@@ -104,7 +104,7 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .stage[data-mode="2"] .cap[data-c="2"], .stage[data-mode="3"] .cap[data-c="3"] { display: block; animation: settle 1.2s both; }
 @keyframes settle { from { opacity: 0; } }
 .cap .eq { display: block; font: italic 300 21px var(--serif); }
-.cap math.eq { display: math; font: 22px "STIX Two Math", "Cambria Math", "Latin Modern Math", math; font-style: normal; }
+.cap .eq .katex { font-size: 21px; font-style: normal; }
 .cap small { display: block; margin-top: 2px; font: 11px var(--mono); letter-spacing: .04em; color: var(--muted); }
 .chapters { display: flex; flex-direction: column; }
 .lead { font: 300 24px/1.5 var(--serif); margin: 0; padding-block: 4vh 0; text-wrap: pretty; }

@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="assets/site.css">
 <script>
   document.documentElement.classList.add('js');
@@ -57,10 +58,10 @@
     <figure class="stage" aria-hidden="true">
       <canvas></canvas>
       <figcaption>
-        <span class="cap" data-c="0"><math class="eq" display="inline"><mi mathvariant="normal">d</mi><msub><mi>x</mi><mi>t</mi></msub><mo>=</mo><mo form="prefix" rspace="0">−</mo><mo form="prefix" lspace="0" rspace="0">∇</mo><mi>U</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>t</mi></msub><mo stretchy="false">)</mo><mspace width="0.17em"/><mi mathvariant="normal">d</mi><mi>t</mi><mo>+</mo><mi>σ</mi><mspace width="0.17em"/><mi mathvariant="normal">d</mi><msub><mi>W</mi><mi>t</mi></msub></math><small>stochastic dynamics in a double-well landscape, σ² = 2T: noise, attractors, switching</small></span>
+        <span class="cap" data-c="0"><span class="eq" data-tex="\mathrm{d}x_t = -\nabla U(x_t)\,\mathrm{d}t + \sqrt{2T}\,\mathrm{d}W_t">dxₜ = −∇U(xₜ) dt + √(2T) dWₜ</span><small>stochastic dynamics in a double-well landscape: noise, attractors, switching</small></span>
         <span class="cap" data-c="1"><span class="eq">packets on a graph</span><small>information routed across a network, a society's nervous system</small></span>
-        <span class="cap" data-c="2"><math class="eq" display="inline"><msub><mi>x</mi><mn>0</mn></msub><mo>←</mo><mi>denoise</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>T</mi></msub><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">)</mo></math><small>frames resolved out of noise; a ball following a physical arc</small></span>
-        <span class="cap" data-c="3"><math class="eq" display="inline"><msub><mi>a</mi><mi>t</mi></msub><mo>∼</mo><msub><mi>π</mi><mi>θ</mi></msub><mo stretchy="false">(</mo><mo>·</mo><mo lspace="0.28em" rspace="0.28em">∣</mo><msub><mi>o</mi><mi>t</mi></msub><mo stretchy="false">)</mo></math><small>one whole-body policy: walking while reaching</small></span>
+        <span class="cap" data-c="2"><span class="eq" data-tex="x_0 \leftarrow \operatorname{denoise}(x_T, c)">x₀ ← denoise(x_T, c)</span><small>frames resolved out of noise; a ball following a physical arc</small></span>
+        <span class="cap" data-c="3"><span class="eq" data-tex="a_t \sim \pi_\theta(\cdot \mid o_t)">aₜ ∼ π_θ(· | oₜ)</span><small>one whole-body policy: walking while reaching</small></span>
       </figcaption>
     </figure>
 
@@ -158,7 +159,13 @@
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { rootMargin: '0px 0px -4% 0px' });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  // typeset stage formulas once KaTeX (deferred) has loaded; plain text stays if it can't
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!window.katex) return;
+    document.querySelectorAll('[data-tex]').forEach((el) => katex.render(el.dataset.tex, el, { throwOnError: false }));
+  });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" defer></script>
 <script src="assets/field.js" defer></script>
 <script src="assets/cosmos.js" defer></script>
 </body>
