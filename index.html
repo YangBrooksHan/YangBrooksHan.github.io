@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&family=Geist+Mono&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script>
+  document.documentElement.classList.add('js');
   try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 </head>
@@ -42,7 +43,7 @@
     <div class="portrait"><img src="https://github.com/YangBrooksHan.png" alt="Portrait of Yang Brooks Han"></div>
   </header>
 
-  <div class="path" aria-label="Career path">
+  <div class="path reveal" aria-label="Career path">
     <a href="#p-math"><span class="g">∂</span><span class="k">equations</span><span class="v">JLU · PKU</span></a>
     <a href="#p-telecom"><span class="g">⌗</span><span class="k">systems</span><span class="v">China Telecom</span></a>
     <a href="#p-vidu"><span class="g">▶</span><span class="k">pixels</span><span class="v">Vidu</span></a>
@@ -102,7 +103,7 @@
 
   <section id="work">
     <h2><small>selected</small>Featured work</h2>
-    <div class="cards">
+    <div class="cards reveal">
       <a class="card big" href="https://deltai.com/en/blog/delta-0">
         <span class="k">Humanoid foundation model</span>
         <h3>Δ<sub>0</sub> — whole-body loco-manipulation for humanoids</h3>
@@ -120,12 +121,12 @@
 
   <section id="writing">
     <h2><small>notes &amp; posts</small>Writing</h2>
-    <ul class="rows">
+    <ul class="rows reveal">
       <li><time>blog</time><div><a href="https://deltai.com/en/blog/delta-0"><b>Δ₀: A New Chapter in Humanoid Intelligence</b></a><span class="meta">Delta Intelligence blog — introducing our humanoid foundation model.</span></div></li>
     </ul>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact" class="contact reveal">
     <h2><small>contact</small>Let's build things that see, imagine, and act.</h2>
     <a class="mail" href="mailto:yangbrooks.han@gmail.com">yangbrooks.han@gmail.com</a>
   </section>
@@ -150,6 +151,15 @@
   };
   addEventListener('scroll', spy, { passive: true });
   spy();
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -12% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  document.querySelectorAll('.card').forEach((card) => card.addEventListener('pointermove', (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    card.style.setProperty('--my', `${e.clientY - r.top}px`);
+  }));
 </script>
 <script src="assets/field.js" defer></script>
 </body>
