@@ -90,7 +90,8 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .path a:hover, .path a.on { color: var(--fg); }
 
 /* epigraph */
-.epigraph { margin: 0 0 9vh; max-width: 36ch; }
+.journey-intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 72px; align-items: start; margin-bottom: 9vh; }
+.epigraph { margin: 0; max-width: 36ch; }
 .epigraph p { font: italic 300 clamp(22px, 2.6vw, 30px)/1.35 var(--serif); margin: 0 0 12px; }
 .epigraph cite { font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-style: normal; }
 
@@ -109,7 +110,7 @@ nav a:not(.brand):hover, nav a.active { color: var(--fg); }
 .cap .eq .katex { font-size: 21px; font-style: normal; }
 .cap small { display: block; margin-top: 2px; font: 11px var(--mono); letter-spacing: .04em; color: var(--muted); }
 .chapters { display: flex; flex-direction: column; }
-.lead { font: 300 24px/1.5 var(--serif); margin: 0; padding-block: 4vh 0; text-wrap: pretty; }
+.lead { font: 300 24px/1.5 var(--serif); margin: 0; text-wrap: pretty; }
 .chapter { --c: var(--c0); min-height: 76vh; padding-block: 12vh; scroll-margin-top: var(--nav); opacity: .32; transition: opacity .9s; }
 .chapter.on, .no-js .chapter { opacity: 1; }
 .chapter .glyph { font: 300 60px/1 var(--math); color: var(--c); }
@@ -161,6 +162,7 @@ footer { padding-block: 10vh 6vh; font: 11px var(--mono); letter-spacing: .1em; 
   .portrait img { width: 76px; height: 76px; }
   .path { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; }
   .journey { grid-template-columns: 1fr; gap: 0; }
+  .journey-intro { grid-template-columns: 1fr; gap: 32px; margin-bottom: 6vh; }
   .stage { top: var(--nav); height: 40vh; z-index: 2; border-radius: 0; margin-inline: -20px; }
   .cap .eq { font-size: 17px; }
   .cap small { display: none; }
